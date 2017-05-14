@@ -15,3 +15,5 @@ from Git
 3. Create a web page for people to select which Puppet module they want to
 compile
 4. Output the Puppet compile logs on the web page
+
+5. Remove unused CSS, JS
