@@ -2,7 +2,7 @@
 
 _Description_
 
-Groot is a web server which provides HTML5 GUI and Python backend(A little bash).
+Groot is a web server which provides HTML5 GUI and Python backend(along with little bash).
 
 It allows people test their Puppet modules and see the compile results in Groot GUI.
 
