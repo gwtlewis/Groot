@@ -4,22 +4,20 @@ import ConfigParser
 
 
 class BasicConfig(object):
-    @staticmethod
-    def readLogConfig():
-        config = ConfigParser.RawConfigParser()
-        config.readfp(open(r'../config/basic.cfg'))
-        log_level = config.get("log", "level")
-        log_path = config.get("log", "path")
-        log_name = config.get("log", "name")
-        log_format = config.get("log", "format")
+    def __init__(self, base_path):
+        self.config = ConfigParser.RawConfigParser()
+        self.config.readfp(open(r'{}/basic.cfg'.format(base_path)))
+
+    def readLogConfig(self):
+        log_level = self.config.get("log", "level")
+        log_path = self.config.get("log", "path")
+        log_name = self.config.get("log", "name")
+        log_format = self.config.get("log", "format")
         return {"log_level": log_level,
                 "log_path": log_path,
                 "log_name": log_name,
                 "log_format": log_format}
 
-    @staticmethod
-    def readPuppetConfig():
-        config = ConfigParser.RawConfigParser()
-        config.readfp(open(r'../config/basic.cfg'))
-        return {"puppet_path": config.get("puppet", "repo"),
-                "puppet_modules": config.get("puppet", "modules")}
+    def readPuppetConfig(self):
+        return {"puppet_path": self.config.get("puppet", "repo"),
+                "puppet_modules": self.config.get("puppet", "modules")}

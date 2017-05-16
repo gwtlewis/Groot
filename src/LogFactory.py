@@ -6,7 +6,7 @@ import Config
 
 # Return the logger with specified log conifg in basic config file
 def logger(name):
-    log_config = Config.BasicConfig.readLogConfig()
+    log_config = Config.BasicConfig('/Users/lewisgong/PycharmProjects/Groot').readLogConfig()
     logger = logging.getLogger(name)
     fh = logging.FileHandler(log_config['log_path'] + "/" + log_config['log_name'])
     fh.setLevel(log_config['log_level'])
