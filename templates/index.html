@@ -13,9 +13,10 @@
         body {
             padding-top: 50px;
         }
-        .content-in-middle {
-        padding: 40px 15px;
-        text-align: center;
+        .modal-header, h4{
+            color: white;
+            text-align: center;
+            font-size: 30px;
         }
     </style>
 </head>
@@ -35,7 +36,10 @@
 <div class="container">
     <div class="page-header">
         <h1>
-            <span>Puppet</span>&nbsp&nbsp&nbsp&nbsp
+            <span>Puppet</span>
+            &nbsp&nbsp&nbsp&nbsp
+            <button type="button" class="btn btn-lg btn-default" id="modules">List Modules</button>
+            &nbsp&nbsp&nbsp&nbsp
             <button type="button" class="btn btn-lg btn-default" id="puppet">Get latest modules</button>
         </h1>
     </div>
@@ -47,6 +51,7 @@
               <tr>
                 <th>#</th>
                 <th>Puppet Module Name</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -54,6 +59,38 @@
           </table>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="compilationOutput" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #5cb85c;">
+                    <h4>Compilation Output</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <p id="output-msg"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="compilationError" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #e60000;">
+                    <h4>ERROR</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <h5>Sorry, i failed to compile the module.</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal end -->
 </div><!-- /.container -->
 
 <!-- Placed at the end of the document so the pages load faster -->

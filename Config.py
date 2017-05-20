@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 # !/usr/bin/env python
 import ConfigParser
+import os
 
 
 class BasicConfig(object):
     def __init__(self, base_path):
         self.config = ConfigParser.RawConfigParser()
-        self.config.readfp(open(r'{}/basic.cfg'.format(base_path)))
+        config_file = os.path.join(base_path, "basic.cfg")
+        self.config.readfp(open(config_file))
 
     def readLogConfig(self):
         log_level = self.config.get("log", "level")

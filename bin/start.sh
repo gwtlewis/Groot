@@ -31,4 +31,4 @@ if [ -n "$pid" ]; then
     echo "Kill previous process."
 fi
 
-nohup python ${BASE_PATH}/src/Main.py 8888 --base-path=${BASE_PATH} >> ${BASE_PATH}/log/console.log &
+nohup python27 ${BASE_PATH}/Main.py 8888 --base-path=${BASE_PATH} >> ${BASE_PATH}/log/console.log 2>&1 &
